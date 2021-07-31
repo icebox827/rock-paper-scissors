@@ -4,7 +4,7 @@ function computerPlay() {
 }
 
 const playerSelection = userInput => {
-  userInput = userInput.toLowerCase()
+  userInput = userInput.toLowerCase();
   if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
     return userInput;
   } else {
@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  const playerSelection = "rock";
+  const playerSelection = 'rock';
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
 }
