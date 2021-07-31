@@ -8,7 +8,7 @@ const playerSelection = userInput => {
   if (userInput == 'rock' || userInput == 'paper' || userInput == 'scissors') {
     return userInput
   } else {
-    return 'Invalid choice! Please try again'
+    console.log('Invalid choice! Please try again')
   }
 }
 
