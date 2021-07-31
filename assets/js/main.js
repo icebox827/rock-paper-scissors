@@ -36,4 +36,10 @@ function playRound (playerSelection, computerSelection) {
   }
 }
 
+function game() {
+  const playerSelection = "rock";
+  const computerSelection = computerPlay();
+  console.log(playRound(playerSelection, computerSelection));
+}
 
+game()
