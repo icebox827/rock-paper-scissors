@@ -1,34 +1,34 @@
-function computerPlay () {
+function computerPlay() {
   const random = ['rock', 'paper', 'scissors']
   return random[Math.floor(Math.random() * 3)]
 }
 
 const playerSelection = userInput => {
   userInput = userInput.toLowerCase()
-  if (userInput == 'rock' || userInput == 'paper' || userInput == 'scissors') {
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
     return userInput
   } else {
     console.log('Invalid choice! Please try again')
   }
 }
 
-function playRound (playerSelection, computerSelection) {
-  if (playerSelection == computerSelection) {
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
     return 'Tie! Try again'
-  } else if (playerSelection == 'rock') {
-    if (computerSelection == 'paper') {
+  } else if (playerSelection === 'rock') {
+    if (computerSelection === 'paper') {
       return 'You lose! Nice try'
     } else {
       return 'You win!'
     }
-  } else if (playerSelection == 'paper') {
-    if (computerSelection == 'scissors') {
+  } else if (playerSelection === 'paper') {
+    if (computerSelection === 'scissors') {
       return 'You lose! Nice try'
     } else {
       return 'You win!'
     }
-  } else if (playerSelection == 'scissors') {
-    if (computerSelection == 'rock') {
+  } else if (playerSelection === 'scissors') {
+    if (computerSelection === 'rock') {
       return 'You lose! Nice try'
     } else {
       return 'You win!'
