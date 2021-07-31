@@ -3,6 +3,10 @@ function computerPlay() {
   return random[Math.floor(Math.random() * 3)];
 }
 
-function playGame(playerSelection, computerSelection) {
-  
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection == computerSelection) {
+    return 'Tie! Try again';
+  } else {
+    return 'You lose! Nice try'
+  }
 }
