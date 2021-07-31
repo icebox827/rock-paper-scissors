@@ -15,7 +15,25 @@ const playerSelection = userInput => {
 function playRound (playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     return 'Tie! Try again'
-  } else {
-    return 'You lose! Nice try'
+  } else if (playerSelection == 'rock') {
+    if (computerSelection == 'paper') {
+      return 'You lose! Nice try'
+    } else {
+      return 'You win!'
+    }
+  } else if (playerSelection == 'paper') {
+    if (computerSelection == 'scissors') {
+      return 'You lose! Nice try'
+    } else {
+      return 'You win!'
+    }
+  } else if (playerSelection == 'scissors') {
+    if (computerSelection == 'rock') {
+      return 'You lose! Nice try'
+    } else {
+      return 'You win!'
+    }
   }
 }
+
+
