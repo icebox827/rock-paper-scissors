@@ -15,7 +15,10 @@
     "no-param-reassign": "off",
     "eol-last": "off",
     "arrow-parens": "off",
-    "no-use-before-define": ["error", {"functions": false, "classes": false, "variables": false}]
+    "no-use-before-define": ["error", {"functions": false, "classes": false, "variables": false}],
+    "no-unused-vars": "off",
+    "no-else-return": "off",
+    "no-console": "off"
   },
   "ignorePatterns": [
     "dist/",
