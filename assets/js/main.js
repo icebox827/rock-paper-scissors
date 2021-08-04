@@ -14,6 +14,10 @@ const playerSelection = userInput => {
 };
 
 function playRound(playerSelection, computerSelection) {
+  const rock = document.querySelector('#rock');
+  const paper = document.querySelector('#paper');
+  const scissors = document.querySelector('#scissors');
+  
   if (playerSelection === computerSelection) {
     return 'Tie! Try again';
   } else if (playerSelection === 'rock') {
