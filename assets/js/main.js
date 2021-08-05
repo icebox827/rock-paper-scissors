@@ -4,7 +4,7 @@ function computerPlay() {
 }
 
 const playerSelection = userMove => {
-  const rockBtn = document.querySelector('#rock').addEventlistener('click', () => {
+  const rockBtn = document.querySelector('#rock').addEventListener('click', () => {
     userMove = 'rock';
   });
 
@@ -23,32 +23,53 @@ const playerSelection = userMove => {
 };
 
 function playRound(playerSelection, computerSelection) {
+  const result = document.getElementById('result');
+
   if (playerSelection === computerSelection) {
-    return 'Tie! Try again';
+    result.innerHTML = 'Tie! Try again';
+    console.log(result)
+    return result;
   } else if (playerSelection === 'rock') {
     if (computerSelection === 'paper') {
-      return 'You lose! Nice try';
+      result.innerHTML = 'You lose! Nice try';
+      console.log(result)
+      return result;
     } else {
-      return 'You win!';
+      result.innerHTML = 'You win!';
+      console.log(result)
+      return result;
     }
   } else if (playerSelection === 'paper') {
     if (computerSelection === 'scissors') {
-      return 'You lose! Nice try';
+      result.innerHTML = 'You lose! Nice try';
+      console.log(result)
+      return result;
     } else {
-      return 'You win!';
+      result.innerHTML = 'You win!';
+      console.log(result)
+      return result;
     }
   } else if (playerSelection === 'scissors') {
     if (computerSelection === 'rock') {
-      return 'You lose! Nice try';
+      result.innerHTML = 'You lose! Nice try';
+      console.log(result)
+      return result;
     } else {
-      return 'You win!';
+      result.innerHTML = 'You win!';
+      console.log(result)
+      return result;
     }
   }
 }
 
 function game() {
-  const playerPlay = playerSelection();
-  const computerSelection = computerPlay();
+  const game = document.getElementById('game');
+  
+  game.appendChild(result);
+
+  playerSelection();
+  computerPlay();
+  playRound();
 }
 
 game();
