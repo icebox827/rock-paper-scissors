@@ -1,23 +1,32 @@
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+
 function computerPlay() {
   const random = ['rock', 'paper', 'scissors'];
   return random[Math.floor(Math.random() * 3)];
 }
 
-const playerSelection = userInput => {
-  userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-    return userInput;
-  } else {
-    console.log('Invalid choice! Please try again');
-  }
+const playerSelection = userMove => {
+  rockBtn.addEventlistener('click', () => {
+    userMove = 'rock';
+  });
+
+  paperBtn.addEventListener('click', () => {
+    userMove = 'paper';
+  });
+
+  scissorsBtn.addEventListener('click', () => {
+    userMove = 'scissors';
+  });
+
+  if (userMove === 'rock' || userMove === 'paper' || userMove === 'scissors') {
+    return userMove;
+  } 
   return userInput;
 };
 
 function playRound(playerSelection, computerSelection) {
-  const rock = document.querySelector('#rock');
-  const paper = document.querySelector('#paper');
-  const scissors = document.querySelector('#scissors');
-  
   if (playerSelection === computerSelection) {
     return 'Tie! Try again';
   } else if (playerSelection === 'rock') {
