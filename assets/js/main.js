@@ -16,9 +16,6 @@ const playerSelection = userMove => {
     userMove = 'scissors';
   });
 
-  if (userMove === 'rock' || userMove === 'paper' || userMove === 'scissors') {
-    return userMove;
-  } 
   return userMove;
 };
 
