@@ -15,65 +15,35 @@ function computerPlay() {
 
 function playerPlay() {
   rockBtn.addEventListener('click', () => {
-    playerRound('rock');
-    console.log(playRound())
+    game('rock');
   });
 
   paperBtn.addEventListener('click', () => {
-    playerRound('paper');
-    console.log(playRound())
+    game('paper');
   });
 
   scissorsBtn.addEventListener('click', () => {
-    playerRound('scissors');
-    console.log(playRound())
+    game('scissors');
   });
 }
 
-function playRound(playerSelection) {
+function game(playerSelection) {
   const computerSelection = computerPlay();
-  if (playerSelection === computerSelection) {
-    result.innerHTML = 'Tie! Try again';
-    console.log(result)
-    return result;
-  } else if (playerSelection === 'rock') {
-    if (computerSelection === 'paper') {
-      result.innerHTML = 'You lose! Nice try';
-      console.log(result)
-      return result;
-    } else {
-      result.innerHTML = 'You win!';
-      console.log(result)
-      return result;
-    }
-  } else if (playerSelection === 'paper') {
-    if (computerSelection === 'scissors') {
-      result.innerHTML = 'You lose! Nice try';
-      console.log(result)
-      return result;
-    } else {
-      result.innerHTML = 'You win!';
-      console.log(result)
-      return result;
-    }
-  } else if (playerSelection === 'scissors') {
-    if (computerSelection === 'rock') {
-      result.innerHTML = 'You lose! Nice try';
-      console.log(result)
-      return result;
-    } else {
-      result.innerHTML = 'You win!';
-      console.log(result)
-      return result;
-    }
+  switch(playerSelection+computerSelection) {
+    case 'rockscissors':
+    case 'paperrock':
+    case 'scissorspaper':
+      win();
+      break;
+    case 'rockpaper':
+    case 'paperscissors':
+    case 'scissorsrock':
+      lose();
+      break;
+    case 'rockrock':
+    case 'paperpaper':
+    case 'scissorsscissors':
+      draw();
+      break;
   }
 }
-
-function game() {
-  const game = document.getElementById('game');
-  
-  game.appendChild(result);
-  
-}
-
-game();
