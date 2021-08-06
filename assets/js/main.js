@@ -2,31 +2,36 @@ const userScore = 0;
 const computerScore = 0;
 const user = document.getElementById('user-score');
 const computer = document.getElementById('computer-score');
+const scoreBoard = document.querySelector('.score-board');
+const result = document.getElementById('result');
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors')
 
 function computerPlay() {
   const random = ['rock', 'paper', 'scissors'];
   return random[Math.floor(Math.random() * 3)];
 }
 
-const playerPlay = userMove => {
-  const rockBtn = document.querySelector('#rock').addEventListener('click', () => {
-    userMove = 'rock';
+function playerPlay() {
+  rockBtn.addEventListener('click', () => {
+    playerRound('rock');
+    console.log(playRound())
   });
 
-  const paperBtn = document.querySelector('#paper').addEventListener('click', () => {
-    userMove = 'paper';
+  paperBtn.addEventListener('click', () => {
+    playerRound('paper');
+    console.log(playRound())
   });
 
-  const scissorsBtn = document.querySelector('#scissors').addEventListener('click', () => {
-    userMove = 'scissors';
+  scissorsBtn.addEventListener('click', () => {
+    playerRound('scissors');
+    console.log(playRound())
   });
+}
 
-  return userMove;
-};
-
-function playRound(playerSelection, computerSelection) {
-  const result = document.getElementById('result');
-
+function playRound(playerSelection) {
+  const computerSelection = computerPlay();
   if (playerSelection === computerSelection) {
     result.innerHTML = 'Tie! Try again';
     console.log(result)
@@ -68,10 +73,7 @@ function game() {
   const game = document.getElementById('game');
   
   game.appendChild(result);
-
-  const playerSelection = playerPlay(userMove);
-  const computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
+  
 }
 
 game();
