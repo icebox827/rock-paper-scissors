@@ -3,7 +3,7 @@ function computerPlay() {
   return random[Math.floor(Math.random() * 3)];
 }
 
-const playerSelection = userMove => {
+const playerPlay = userMove => {
   const rockBtn = document.querySelector('#rock').addEventListener('click', () => {
     userMove = 'rock';
   });
@@ -64,9 +64,9 @@ function game() {
   
   game.appendChild(result);
 
-  playerSelection();
-  computerPlay();
-  playRound();
+  const playerSelection = playerPlay(userMove);
+  const computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection);
 }
 
 game();
