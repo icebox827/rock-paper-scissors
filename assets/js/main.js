@@ -1,3 +1,8 @@
+const userScore = 0;
+const computerScore = 0;
+const user = document.getElementById('user-score');
+const computer = document.getElementById('computer-score');
+
 function computerPlay() {
   const random = ['rock', 'paper', 'scissors'];
   return random[Math.floor(Math.random() * 3)];
