@@ -6,7 +6,7 @@ const scoreBoard = document.querySelector('.score-board');
 const result = document.getElementById('result');
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
-const scissorsBtn = document.querySelector('#scissors')
+const scissorsBtn = document.querySelector('#scissors');
 
 function computerPlay() {
   const random = ['rock', 'paper', 'scissors'];
@@ -27,9 +27,28 @@ function playerPlay() {
   });
 }
 
+function win(playerSelection, computerSelection) {
+  userScore++;
+  user.innerHTML = userScore;
+  computer.innerHTML = computerScore;
+  result.innerHTML = `$(playerSelection) + 'beats' + $(computerSelection) + '. You win!'`;
+}
+
+function lose(playerSelection, computerSelection) {
+  computerScore++;
+  user.innerHTML = userScore;
+  computer.innerHTML = computerScore;
+  result.innerHTML = `$(playerSelection) + 'beats' + $(computerSelection) + '. You win!'`;
+}
+
+function draw(playerSelection, computerSelection) {
+  user.innerHTML = userScore;
+  computer.innerHTML = computerScore;
+}
+
 function game(playerSelection) {
   const computerSelection = computerPlay();
-  switch(playerSelection+computerSelection) {
+  switch(playerSelection + computerSelection) {
     case 'rockscissors':
     case 'paperrock':
     case 'scissorspaper':
